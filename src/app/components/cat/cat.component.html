@@ -1,0 +1,16 @@
+<div class="container mt-5">
+
+    <div *ngIf="cat" class="row animate_animated animate_bounce animate_fadeIn">
+        <div class="col-md-9">
+            <p><strong>Identifier:</strong> {{cat.id}}</p>
+            <p><strong>Author:</strong> {{cat.name}}</p>
+            <p><strong>Description:</strong> {{cat.description}}</p>
+            <p><strong>Wikipedia Url:</strong> {{cat.wikipedia_url}}</p>
+            <img style="width: 80%; height: 80%;" class="rounded" src="{{cat.image.url}}" alt="">
+        </div>
+
+        <div class="col-md-3">
+            <a class="btn btn-danger" routerLink="/">Back</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Cats</h1>
+    <ul class="list-group">
+        <a *ngFor="let cat of cats" [routerLink]="['images/search/breed-ids', cat.id]" class="list-group-item list-group-item-action animate_animated animate_bounce animate_fadeIn">
+            {{cat.id}} - {{cat.name}}
+        </a>
+    </ul>
+</div>
