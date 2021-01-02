@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CatsComponent } from './components/cats/cats.component';
 import { CatComponent } from './components/cat/cat.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,9 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
     CatComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
